@@ -37,7 +37,7 @@ const Header = () => {
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, i) => (
                             <Button key={i} sx={{ color: '#fff' }}>
-                                <Link to={item.path}>
+                                <Link to={item.path} style={{ color: "#fff", textDecoration: "none" }}>
                                     {item.name}
                                 </Link>
                             </Button>
