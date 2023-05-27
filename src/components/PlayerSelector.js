@@ -29,12 +29,14 @@ const PlayerSelector = () => {
         }
     })
 
-    const onRowsSelectionHandler = (ids) => {
-        setPlayer(ids);
-    };
+    const onRowsSelectionHandler = (ids) => { setPlayer(ids) };
 
     const handleAddPlayerButtonClick = () => {
-        dispatch(addPlayerInTeam({ teamId: team, playerList: player }))
+        if (team !== "") {
+            dispatch(addPlayerInTeam({ teamId: team, playerList: player }))
+        } else {
+            alert("Please Select a team")
+        }
     }
 
     return (

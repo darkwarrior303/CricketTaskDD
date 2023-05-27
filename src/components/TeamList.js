@@ -1,21 +1,11 @@
-import { MenuItem } from "@mui/base";
-import { Box, Button, Card, CardActions, CardContent, Grid, Menu, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 const TeamList = () => {
   const teams = useSelector((state) => state.reducer.teams);
   const players = useSelector((state) => state.reducer.players);
-
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const rows = teams.map((player) => {
-    return {
-      id: player,
-      // name: player.name
-    }
-  })
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },

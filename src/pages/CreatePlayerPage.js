@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addPlayer } from "../redux/actions/playerActions";
 import PlayerList from "../components/PlayerList";
+import { Button, TextField } from "@mui/material";
 
 const CreatePlayerPage = () => {
   const [name, setName] = useState("");
@@ -34,13 +35,8 @@ const CreatePlayerPage = () => {
     <div>
       <h2>Create Player</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter Player name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <button type="submit">Add Player</button>
+        <TextField id="standard-basic" label="Enter Player Name" variant="standard" value={name} onChange={(e) => setName(e.target.value)} />
+        <Button variant="contained" type="submit">Add Player</Button>
       </form>
       <PlayerList />
     </div>

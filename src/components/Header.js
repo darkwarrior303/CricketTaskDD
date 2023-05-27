@@ -27,13 +27,9 @@ const Header = () => {
             <CssBaseline />
             <AppBar component="nav">
                 <Toolbar>
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
+                    <Link to="/" style={{ color: "white", textDecoration: "none", marginRight: "auto" }}>
                         Cricket
-                    </Typography>
+                    </Link>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item, i) => (
                             <Button key={i} sx={{ color: '#fff' }}>
